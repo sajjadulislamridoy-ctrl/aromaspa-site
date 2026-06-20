@@ -291,6 +291,66 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-12 bg-amber-500 text-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">২০০+</div>
+              <div className="text-sm md:text-base opacity-90">হ্যাপি কাস্টমার</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">১০০%</div>
+              <div className="text-sm md:text-base opacity-90">কাস্টমার স্যাটিসফেকশন</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">১৫+</div>
+              <div className="text-sm md:text-base opacity-90">এক্সপার্ট থেরাপিস্ট</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">২৪/৭</div>
+              <div className="text-sm md:text-base opacity-90">কাস্টমার সাপোর্ট</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">কাস্টমার ফিডব্যাক</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
+              <div className="flex text-amber-400 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                ))}
+              </div>
+              <p className="text-gray-700 italic mb-6">"উত্তরায় অনেক স্পা আছে কিন্তু অ্যারোমা স্পার সার্ভিস একদম আলাদা। থেরাপিস্টরা অনেক দক্ষ এবং পরিবেশটা খুব শান্ত।"</p>
+              <div className="font-bold text-gray-900">- তানভীর আহমেদ</div>
+            </div>
+            <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
+              <div className="flex text-amber-400 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                ))}
+              </div>
+              <p className="text-gray-700 italic mb-6">"বডি ম্যাসাজটা অসাধারণ ছিল। খুব রিল্যাক্সিং এবং হাইজিন মেইনটেইন করে তারা। অবশ্যই আবার আসব।"</p>
+              <div className="font-bold text-gray-900">- রাকিব হাসান</div>
+            </div>
+            <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
+              <div className="flex text-amber-400 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                ))}
+              </div>
+              <p className="text-gray-700 italic mb-6">"সাশ্রয়ী দামে এত প্রিমিয়াম সার্ভিস ভাবাই যায় না। থাই ম্যাসাজটা আমার ফেভারিট। ধন্যবাদ অ্যারোমা স্পা।"</p>
+              <div className="font-bold text-gray-900">- সাজ্জাদুল ইসলাম</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
