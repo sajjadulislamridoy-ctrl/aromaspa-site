@@ -400,10 +400,23 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <MapPin className="w-6 h-6 text-amber-500 mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Our Location</h3>
-              <p className="text-gray-700">House 29, Road 3/B, Sector 09, Uttara, Dhaka 1230, Bangladesh</p>
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <MapPin className="w-6 h-6 text-amber-500 mb-4" />
+                <h3 className="font-semibold text-gray-900 mb-2">Our Location</h3>
+                <p className="text-gray-700">House 29, Road 3/B, Sector 09, Uttara, Dhaka 1230, Bangladesh</p>
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-lg h-64 border-4 border-white">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!4v1718991234567!6m8!1m7!1s3fsbetTn3MxV9x_DaAqVGg!2m2!1d23.8776263!2d90.399245!3f278.91!4f0!5f0.7820865974627469" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
