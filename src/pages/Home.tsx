@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Phone, MessageCircle, Mail, MapPin, Facebook, Send } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 // Service data organized by categories with AI-generated images
 const serviceCategories = {
@@ -14,9 +13,9 @@ const serviceCategories = {
         name: 'Thai Massage',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/thai-massage-service-bi2CHZKp5FN5wMBofKKJwu.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ২৫০০' },
-          { duration: '90 Minutes', price: '৳ ৩৫০০' },
-          { duration: '120 Minutes', price: '৳ ৪৫০০' }
+          { duration: '60 Minutes', price: '5000 BDT' },
+          { duration: '90 Minutes', price: '7500 BDT' },
+          { duration: '120 Minutes', price: '10000 BDT' }
         ]
       },
       {
@@ -24,9 +23,9 @@ const serviceCategories = {
         name: 'Body Massage',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/body-massage-service-EocuoMpMg2sGnpyJDaqVzb.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ২২০০' },
-          { duration: '90 Minutes', price: '৳ ৩২০০' },
-          { duration: '120 Minutes', price: '৳ ৪২০০' }
+          { duration: '60 Minutes', price: '5000 BDT' },
+          { duration: '90 Minutes', price: '7000 BDT' },
+          { duration: '120 Minutes', price: '8000 BDT' }
         ]
       },
       {
@@ -34,9 +33,9 @@ const serviceCategories = {
         name: 'Hot Stone Massage',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/hot-stone-massage-service-YAfHrUBEQQoN2rVzMbq3wy.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ২৭০০' },
-          { duration: '90 Minutes', price: '৳ ৩৭০০' },
-          { duration: '120 Minutes', price: '৳ ৪৭০০' }
+          { duration: '60 Minutes', price: '6000 BDT' },
+          { duration: '90 Minutes', price: '8000 BDT' },
+          { duration: '120 Minutes', price: '12000 BDT' }
         ]
       },
       {
@@ -44,9 +43,9 @@ const serviceCategories = {
         name: 'Deep Tissue Massage',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/deep-tissue-massage-service-FBd5h8gtU2vcMjmDzJQAuf.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ২৫০০' },
-          { duration: '90 Minutes', price: '৳ ৩৫০০' },
-          { duration: '120 Minutes', price: '৳ ৪৫০০' }
+          { duration: '60 Minutes', price: '4000 BDT' },
+          { duration: '90 Minutes', price: '6000 BDT' },
+          { duration: '120 Minutes', price: '8000 BDT' }
         ]
       },
       {
@@ -54,9 +53,9 @@ const serviceCategories = {
         name: 'Dry Massage',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/dry-massage-service-EgkyEF8vE6txFVzFCYfRPX.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ১৮০০' },
-          { duration: '90 Minutes', price: '৳ ২৫০০' },
-          { duration: '120 Minutes', price: '৳ ৩২০০' }
+          { duration: '60 Minutes', price: '4000 BDT' },
+          { duration: '90 Minutes', price: '6000 BDT' },
+          { duration: '120 Minutes', price: '8000 BDT' }
         ]
       },
       {
@@ -64,9 +63,9 @@ const serviceCategories = {
         name: 'Back & Shoulder Massage',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/back-shoulder-massage-service-ANada9EiAwKnBUFnC3LNJ5.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ২২০০' },
-          { duration: '90 Minutes', price: '৳ ৩২০০' },
-          { duration: '120 Minutes', price: '৳ ৪২০০' }
+          { duration: '60 Minutes', price: '5000 BDT' },
+          { duration: '90 Minutes', price: '7500 BDT' },
+          { duration: '120 Minutes', price: '10000 BDT' }
         ]
       },
       {
@@ -74,9 +73,9 @@ const serviceCategories = {
         name: 'Oil Massage',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/oil-massage-service-Qu3okjJuJLTcxeZc6K3GvA.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ২২০০' },
-          { duration: '90 Minutes', price: '৳ ৩২০০' },
-          { duration: '120 Minutes', price: '৳ ৪২০০' }
+          { duration: '60 Minutes', price: '5000 BDT' },
+          { duration: '90 Minutes', price: '7500 BDT' },
+          { duration: '120 Minutes', price: '10000 BDT' }
         ]
       },
       {
@@ -84,9 +83,9 @@ const serviceCategories = {
         name: 'Four Hand Massage',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/four-hand-massage-service-9PUMeiNKSoRfX2KvorxNex.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ৪০০০' },
-          { duration: '90 Minutes', price: '৳ ৫৫০০' },
-          { duration: '120 Minutes', price: '৳ ৭০০০' }
+          { duration: '60 Minutes', price: '11000 BDT' },
+          { duration: '90 Minutes', price: '16000 BDT' },
+          { duration: '120 Minutes', price: '20000 BDT' }
         ]
       },
       {
@@ -94,9 +93,9 @@ const serviceCategories = {
         name: 'Aroma Oil Massage',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/aroma-oil-massage-service-RuA9V8ipmgxm6NHRKsQfuh.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ২৭০০' },
-          { duration: '90 Minutes', price: '৳ ৩৭০০' },
-          { duration: '120 Minutes', price: '৳ ৪৭০০' }
+          { duration: '60 Minutes', price: '5000 BDT' },
+          { duration: '90 Minutes', price: '7000 BDT' },
+          { duration: '120 Minutes', price: '10000 BDT' }
         ]
       }
     ]
@@ -109,9 +108,9 @@ const serviceCategories = {
         name: 'Aroma Therapy',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/aroma-therapy-service-HD7vEsc2gsaqoq5pJ7dDdU.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ২০০০' },
-          { duration: '90 Minutes', price: '৳ ৩০০০' },
-          { duration: '120 Minutes', price: '৳ ৪০০০' }
+          { duration: '60 Minutes', price: '5000 BDT' },
+          { duration: '90 Minutes', price: '7500 BDT' },
+          { duration: '120 Minutes', price: '10000 BDT' }
         ]
       },
       {
@@ -119,9 +118,9 @@ const serviceCategories = {
         name: 'Foot Reflexology',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/foot-reflexology-service-43Hy7a7JMEpG6LmW6Dob7q.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ২০০০' },
-          { duration: '90 Minutes', price: '৳ ৩০০০' },
-          { duration: '120 Minutes', price: '৳ ৪০০০' }
+          { duration: '60 Minutes', price: '4000 BDT' },
+          { duration: '90 Minutes', price: '6000 BDT' },
+          { duration: '120 Minutes', price: '8000 BDT' }
         ]
       },
       {
@@ -129,9 +128,9 @@ const serviceCategories = {
         name: 'Facial Treatment',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/facial-treatment-service-aK8yqpEBbdKs9DVoh9Z4MY.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ২৫০০' },
-          { duration: '90 Minutes', price: '৳ ৩৫০০' },
-          { duration: '120 Minutes', price: '৳ ৪৫০০' }
+          { duration: '60 Minutes', price: '5000 BDT' },
+          { duration: '90 Minutes', price: '7500 BDT' },
+          { duration: '120 Minutes', price: '9000 BDT' }
         ]
       },
       {
@@ -139,9 +138,9 @@ const serviceCategories = {
         name: 'Elegant Special Massage',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/elegant-special-massage-service-hTJ4ntL5RjPN8zYTdxWLWT.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ৩২০০' },
-          { duration: '90 Minutes', price: '৳ ৪৫০০' },
-          { duration: '120 Minutes', price: '৳ ৫৮০০' }
+          { duration: '60 Minutes', price: '7500 BDT' },
+          { duration: '90 Minutes', price: '10000 BDT' },
+          { duration: '120 Minutes', price: '15000 BDT' }
         ]
       },
       {
@@ -149,9 +148,9 @@ const serviceCategories = {
         name: 'Thai Traditional Massage',
         image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/thai-traditional-massage-service-Z7hfv6M7Zgjh4KAQRhgabt.webp',
         pricing: [
-          { duration: '60 Minutes', price: '৳ ২৫০০' },
-          { duration: '90 Minutes', price: '৳ ৩৫০০' },
-          { duration: '120 Minutes', price: '৳ ৪৫০০' }
+          { duration: '60 Minutes', price: '5000 BDT' },
+          { duration: '90 Minutes', price: '7500 BDT' },
+          { duration: '120 Minutes', price: '10000 BDT' }
         ]
       }
     ]
@@ -202,47 +201,14 @@ export default function Home() {
     }
   ];
 
-  const localSchema = {
-    "@context": "https://schema.org",
-    "@type": "DaySpa",
-    "name": "Aroma Spa Uttara",
-    "image": "https://aromaspauttara.com/logo.png",
-    "url": "https://aromaspauttara.com",
-    "telephone": "+8801780821112",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "House 29, Road 3/B, Sector 09",
-      "addressLocality": "Uttara",
-      "addressRegion": "Dhaka",
-      "postalCode": "1230",
-      "addressCountry": "BD"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 23.8759,
-      "longitude": 90.3926
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-      ],
-      "opens": "10:00",
-      "closes": "22:00"
-    }
-  };
-
   return (
     <div className="w-full bg-white">
-      <script type="application/ld+json">
-        {JSON.stringify(localSchema)}
-      </script>
       {/* Navigation Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <img 
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/hero-banner-5pmpKe6W4qykgycDebMVoH.webp" 
+              src="/manus-storage/058a29a0-6b5c-11f1-a3cc-fbd4bae1063e(2)_6c809137.png" 
               alt="Aroma Spa Logo" 
               className="h-12 w-12 object-contain"
             />
@@ -264,7 +230,7 @@ export default function Home() {
       <section 
         className="relative h-96 bg-cover bg-center flex items-center justify-center"
         style={{
-          backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/hero-banner-5pmpKe6W4qykgycDebMVoH.webp)',
+          backgroundImage: 'url(/manus-storage/hero-banner_ae46e6f7.jpg)',
           backgroundAttachment: 'fixed'
         }}
       >
@@ -288,66 +254,6 @@ export default function Home() {
           <p className="text-lg text-gray-700 text-center leading-relaxed">
             At Aroma Spa Uttara, we believe that wellness is not a luxury but a necessity. Our mission is to provide professional, high-quality spa and massage services that are accessible to everyone. Located in the heart of Uttara, we create a serene sanctuary where you can escape the stress of daily life and rejuvenate your mind, body, and soul. Our team of certified therapists is dedicated to delivering exceptional service with personalized attention to every guest.
           </p>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-12 bg-amber-500 text-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">২০০+</div>
-              <div className="text-sm md:text-base opacity-90">হ্যাপি কাস্টমার</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">১০০%</div>
-              <div className="text-sm md:text-base opacity-90">কাস্টমার স্যাটিসফেকশন</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">১৫+</div>
-              <div className="text-sm md:text-base opacity-90">এক্সপার্ট থেরাপিস্ট</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">২৪/৭</div>
-              <div className="text-sm md:text-base opacity-90">কাস্টমার সাপোর্ট</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">কাস্টমার ফিডব্যাক</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
-              <div className="flex text-amber-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                ))}
-              </div>
-              <p className="text-gray-700 italic mb-6">"উত্তরায় অনেক স্পা আছে কিন্তু অ্যারোমা স্পার সার্ভিস একদম আলাদা। থেরাপিস্টরা অনেক দক্ষ এবং পরিবেশটা খুব শান্ত।"</p>
-              <div className="font-bold text-gray-900">- তানভীর আহমেদ</div>
-            </div>
-            <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
-              <div className="flex text-amber-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                ))}
-              </div>
-              <p className="text-gray-700 italic mb-6">"বডি ম্যাসাজটা অসাধারণ ছিল। খুব রিল্যাক্সিং এবং হাইজিন মেইনটেইন করে তারা। অবশ্যই আবার আসব।"</p>
-              <div className="font-bold text-gray-900">- রাকিব হাসান</div>
-            </div>
-            <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
-              <div className="flex text-amber-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                ))}
-              </div>
-              <p className="text-gray-700 italic mb-6">"সাশ্রয়ী দামে এত প্রিমিয়াম সার্ভিস ভাবাই যায় না। থাই ম্যাসাজটা আমার ফেভারিট। ধন্যবাদ অ্যারোমা স্পা।"</p>
-              <div className="font-bold text-gray-900">- সাজ্জাদুল ইসলাম</div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -375,6 +281,7 @@ export default function Home() {
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+            {/* Vertical Divider */}
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-amber-200 to-transparent"></div>
 
             {serviceCategories[selectedCategory as keyof typeof serviceCategories].services.map((service) => (
@@ -389,6 +296,8 @@ export default function Home() {
                 />
                 <div className="p-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.name}</h3>
+                  
+                  {/* Pricing Table */}
                   <div className="mb-6 bg-gray-50 rounded-lg p-4">
                     <table className="w-full text-sm">
                       <tbody>
@@ -401,6 +310,7 @@ export default function Home() {
                       </tbody>
                     </table>
                   </div>
+
                   <Button 
                     onClick={() => handleBooking(service.name)}
                     className="w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 rounded-lg"
@@ -408,6 +318,28 @@ export default function Home() {
                     Book Now
                   </Button>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Why Choose Us</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: 'Professional Therapists', desc: 'Certified and experienced therapists dedicated to your wellness' },
+              { title: 'Clean & Hygienic', desc: 'Maintained to highest standards with premium linens and equipment' },
+              { title: 'Affordable Pricing', desc: 'Premium services at prices accessible to everyone' },
+              { title: 'Relaxing Atmosphere', desc: 'Serene environment with soft lighting, aromatics, and calming music' },
+              { title: 'Personalized Service', desc: 'Tailored treatments based on your specific needs and preferences' },
+              { title: 'Convenient Location', desc: 'Easily accessible in the heart of Uttara with flexible hours' }
+            ].map((item, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-lg shadow-md text-center">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -426,7 +358,9 @@ export default function Home() {
                   className="w-full px-6 py-4 flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors"
                 >
                   <span className="font-semibold text-gray-900">{item.question}</span>
-                  <ChevronDown className={`w-5 h-5 text-amber-500 transition-transform ${expandedFAQ === item.id ? 'rotate-180' : ''}`} />
+                  <ChevronDown 
+                    className={`w-5 h-5 text-amber-500 transition-transform ${expandedFAQ === item.id ? 'rotate-180' : ''}`}
+                  />
                 </button>
                 {expandedFAQ === item.id && (
                   <div className="px-6 py-4 bg-white border-t border-gray-200">
@@ -441,55 +375,106 @@ export default function Home() {
 
       {/* Contact Section */}
       <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12">Contact Us</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Contact Us</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <Phone className="w-6 h-6 text-amber-500 mt-1" />
+                <Phone className="w-6 h-6 text-amber-500 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-gray-900">Phone</h3>
-                  <a href="tel:+8801780821112" className="text-amber-600">+880 1780-821112</a>
+                  <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
+                  <a href="tel:+8801780821112" className="text-amber-600 hover:text-amber-700">+880 1780-821112</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <MessageCircle className="w-6 h-6 text-amber-500 mt-1" />
+                <MessageCircle className="w-6 h-6 text-amber-500 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-gray-900">WhatsApp</h3>
-                  <a href="https://wa.me/8801780821112" target="_blank" className="text-amber-600">Chat with us</a>
+                  <h3 className="font-semibold text-gray-900 mb-1">WhatsApp</h3>
+                  <a href="https://wa.me/8801780821112" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:text-amber-700">Chat with us</a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <Send className="w-6 h-6 text-amber-500 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Telegram</h3>
+                  <a href="https://t.me/+8801780821112" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:text-amber-700">Message us</a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <Mail className="w-6 h-6 text-amber-500 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
+                  <a href="mailto:uttaraspa1230@gmail.com" className="text-amber-600 hover:text-amber-700">uttaraspa1230@gmail.com</a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <Facebook className="w-6 h-6 text-amber-500 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Facebook</h3>
+                  <a href="https://www.facebook.com/share/1BPpzxc3Jc/" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:text-amber-700">Follow us</a>
                 </div>
               </div>
             </div>
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <MapPin className="w-6 h-6 text-amber-500 mb-4" />
+
+            {/* 3D Street View Map */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden h-96">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1718900000!6m8!1m7!1sb-jbJUfx9e1lVSrSJEO2Sg!2m2!1d23.8775521!2d90.3990835!3f233.72758!4f0!5f0.7820865974627469"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+          {/* Address */}
+          <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <div className="flex items-start gap-4">
+              <MapPin className="w-6 h-6 text-amber-500 mt-1 flex-shrink-0" />
+              <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Our Location</h3>
                 <p className="text-gray-700">House 29, Road 3/B, Sector 09, Uttara, Dhaka 1230, Bangladesh</p>
-              </div>
-              <div className="rounded-lg overflow-hidden shadow-lg h-64 border-4 border-white">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!4v1718991234567!6m8!1m7!1s3fsbetTn3MxV9x_DaAqVGg!2m2!1d23.8776263!2d90.399245!3f278.91!4f0!5f0.7820865974627469" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Mobile Floating Buttons */}
+      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-40 md:hidden">
+        <a
+          href="https://wa.me/8801780821112"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg transition-all"
+          title="WhatsApp"
+        >
+          <MessageCircle className="w-7 h-7" />
+        </a>
+        <a
+          href="tel:+8801780821112"
+          className="w-14 h-14 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg transition-all"
+          title="Call"
+        >
+          <Phone className="w-7 h-7" />
+        </a>
+        <button
+          onClick={handleQuickBooking}
+          className="w-14 h-14 bg-amber-500 hover:bg-amber-600 text-white rounded-full flex items-center justify-center shadow-lg transition-all"
+          title="Quick Booking"
+        >
+          <MessageCircle className="w-7 h-7" />
+        </button>
+      </div>
+
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4">
+      <footer className="bg-gray-900 text-white py-8 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="mb-6">&copy; 2024 Aroma Spa Uttara. All rights reserved.</p>
-          <div className="flex justify-center gap-6 text-sm text-gray-400">
-            <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
-            <Link to="/terms-of-service" className="hover:text-white">Terms of Service</Link>
-          </div>
+          <p className="mb-4">&copy; 2024 Aroma Spa Uttara. All rights reserved.</p>
+          <p className="text-gray-400">The Ultimate Massage and Wellness Experience</p>
         </div>
       </footer>
     </div>
