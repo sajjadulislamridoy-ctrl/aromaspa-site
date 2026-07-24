@@ -404,7 +404,7 @@ export default function Home() {
                 <Mail className="w-6 h-6 text-amber-500 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                  <a href="mailto:uttaraspa1230@gmail.com" className="text-amber-600 hover:text-amber-700">uttaraspa1230@gmail.com</a>
+                  <a href="mailto:Aromaspauttara@gmail.com" className="text-amber-600 hover:text-amber-700">Aromaspauttara@gmail.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
